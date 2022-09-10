@@ -1,6 +1,7 @@
 import configparser
 from pypresence import Presence
 import time
+import sys
 # Read config
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -186,3 +187,5 @@ while True:
             config['CONNECTION']['client_id'] = x
             with open('config.ini', 'w') as configfile:
                 config.write(configfile)
+    elif x == "3":
+        sys.exit(0)
