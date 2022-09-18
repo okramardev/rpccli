@@ -2,6 +2,7 @@ import configparser
 from pypresence import Presence
 import time
 import sys
+import ast
 # Read config
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -23,6 +24,8 @@ spectate = config['RPC']['spectate']
 match = config['RPC']['match']
 buttons = config['RPC']['buttons']
 instance = config['RPC']['instance']
+
+buttons = ast.literal_eval(buttons)
 
 # Main
 while True:
